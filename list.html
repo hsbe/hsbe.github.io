@@ -12,12 +12,23 @@
         for (let file of data) {
           if(file.type == "dir" && !ignoredDirs.includes(file.name)){
             fetchWithRecursion("https://api.github.com/repos/hsbe/hsbe.github.io/contents/"+file.path);
-          }else if(file.type == "file" && file.name.endsWith(".json") )
-          htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+          }else if(file.type == "file" && file.name.endsWith(".json") ){
+            htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
 
-          const map = await fetch("https://hsbe.world/"+file.path);
-          //const mapData = await map.json();
-          console.log(map);
+            const map = await fetch("https://hsbe.world/"+file.path);
+            const mapData = await map.json();
+            if(Object.prototype.hasOwnProperty.call(mapData, 'layers')){
+              mapData.layers.forEach(function(layer) {
+                if(Object.prototype.hasOwnProperty.call(layer, 'properties')){
+                  console.log(layer.properties);
+                }
+
+
+              });
+            }
+            console.log(mapData);
+          }
+
 
 
 
