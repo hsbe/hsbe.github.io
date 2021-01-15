@@ -15,9 +15,9 @@
           }else if(file.type == "file" && file.name.endsWith(".json") )
           htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
 
-          const map = await fetch(file.path);
-          const mapData = await map.json();
-          console.log(mapData);
+          const map = await fetch("https://hsbe.world/"+file.path);
+          //const mapData = await map.json();
+          console.log(map);
 
 
 
