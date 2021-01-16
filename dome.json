@@ -67,7 +67,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"..\/69.195.153.34\/cvgm192?.mp3"
+                 "value":"radio.html"
                 }],
          "type":"tilelayer",
          "visible":true,
