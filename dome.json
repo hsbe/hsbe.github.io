@@ -67,7 +67,7 @@
                 {
                  "name":"playAudio",
                  "type":"string",
-                 "value":"radio.m3u"
+                 "value":"radio.mp3"
                 }],
          "type":"tilelayer",
          "visible":true,
